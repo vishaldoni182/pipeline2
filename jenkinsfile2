@@ -1,0 +1,26 @@
+pipeline {
+ agent any
+
+  triggers {
+     cron ( 'H/5 * * * *' )
+}
+
+     environment {
+           VISHAL = 'hello my name is vishal'
+         }
+
+      stages {
+        stage ('BUILD') {
+             steps {
+                sh ' echo this is jenkins file '
+                     sh ' cal '
+              }
+           }
+        stage ('TEST') {
+           steps {
+                sh ' ls -lrt '
+            }
+          }
+     }
+    }
+
