@@ -1,0 +1,35 @@
+pipeline {
+ agent any
+
+     parameters {
+      string (name : 'NAME' , description : 'enter the full details')
+         text ( name : 'NAME' , description : 'enter your name here')
+         booleanpara ( name : 'BOOL' , description : 'data is added')
+        choice ( name : 'BRANCH' , choice : 'master','feature','hot fix', description : 'select any of the branches')
+        choice ( name : 'ENV' , choice : 'build' , 'release', 'prod'', description : 'select any of the stage ')
+
+             }   
+
+        environment {
+                JOB = 'total stages'
+            }
+
+              stages {
+                stage ('BUILD') {
+                  steps {
+                     echo " NAME $(params .NAME) 
+                      sh "echo $(params .NAME )"
+                        sh 'bash /home/ec2-user/script/greatest_nos 10 7 5'
+                         }
+                       }
+                               
+                 stage ('TEST') {
+              steps {
+                   sh 'ls -lrt '
+                       sh ' sleep 5 ' 
+                     }
+                    }
+               }
+              
+}
+
