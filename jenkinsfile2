@@ -6,7 +6,7 @@ pipeline {
 }
 
      environment {
-           VISHAL = 'hello my name is vishal'
+           VISHAL = 'hello please note that this is vishal'
          }
 
       stages {
