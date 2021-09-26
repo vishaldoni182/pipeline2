@@ -11,7 +11,7 @@ pipeline {
              }   
 
         environment {
-                JOB = 'total stages'
+                VERSION = '5.043'
             }
 
               stages {
@@ -20,6 +20,7 @@ pipeline {
                      echo " NAME $(params .NAME) 
                       sh "echo $(params .NAME )"
                         sh 'bash /home/ec2-user/script/greatest_nos 10 7 5'
+                        echo "building the new software ${VERSION}"
                          }
                        }
                                
